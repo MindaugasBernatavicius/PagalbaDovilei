@@ -1,0 +1,112 @@
+
+1. Encapsulation:
+    - duomenys ir metodai klasėje enkasuliuojami. Ir klasėje galime nurodyti jų pasiekiamumo lygmenį: public, etc.
+    - sąsaja su getteriais ir setteriais, bei privačiais kintamaisiais.
+    - Pvz kode:
+    public class Person {
+        private String name;
+        public String getName(){ return this.name; }
+        public void setName(String name){
+            // = - priskyrimo operatoriau asociatyvumas yra iš dešinės į kairę
+            this.name = name;
+        }
+    }
+
+    public class App {
+        public static void main(String[] args){
+            Person p2 = new Person();
+            Person p1 = new Person();
+            p1.setName("Mindaugas");
+        }
+    }
+
+2. Inheritance:
+    - keyword'ai: extends, child class, parent class ir "is-a" relationship.
+    - paipildomai pridedame funkcionalumo tipui, nedublikuodami kodo.
+    - kodo nedublikavimas leidžia įgyvendinti D.R.Y principą - kodas nesikartoja.
+    - Pvz kode:
+    public class Person {}
+    public class Developer extends Person {}
+
+3. Composition:
+    - Kai klasėje (pvz: Warehouse) dalyvauja kitos klasės objektai (pvz: Items in Warehouse).
+    - Gali būti, vienas objektas arba objektų kolekcija: pvz: List<Item> items.
+    - Pvz kode:
+
+    public class Warehouse {
+        private List<Item> items;
+    }
+
+    public class Library {
+        private List<Book> books;
+    }
+
+    public class Person {
+        private Name name;
+    }
+
+    private class Name {
+        private String firstName;
+        private String middleName;
+        private String lastName;
+    }
+
+4. Enums
+    - Fiksuotas rinkinys reikšmių ar konstantų rinkinys (metų mėnesiai, savaitės dienos).
+    - Pvz kode:
+    public enum Gender { MALE; FEMALE; OTHER; }
+
+5. Abstract class
+    - class that has an abstract method and can not be instantiated; Skirtos tik extendinimui konkrečių klasių.
+    - Jos artimesnės interface'ams nei klasėms;
+    - Kas abstrakčias klases ir konkrečias klases vienija, tai, kad galime realizuot duomenis ir realius metodus abstrakčioje klasėje (bet ne interface).
+    - Konkreti klasė --> Abstrakti klasė --> Interface'as.
+    - Abstrakčioje klasėje, gali egzistuoti abstraktūs metodai t.y. metodai be kūno/body. Body bus aprašytas tose klasėse, kurios extendins tą abstrakčią klasę.
+    - Pvz kode:
+
+    abstract class Person {
+        private String name;
+
+        public String getName(){
+            return this.name;
+        }
+
+        abstract String calculate();
+    }
+
+6. Interface
+    - Deklaruoja kontraktą t.y. pasako, kokius metodus klasė, kuri implementuoja tą interface'ą turi turėti.
+    - Kontraktas, kuris apibrėžia elgseną, nes savyje interfeicai turi metodų deklaracijas.
+    - Pvz kode:
+
+    package java.lang;
+
+    public interface Comparable<T> {
+        int compareTo(T var1);
+    }
+
+7. Exceptions
+    - Klaidą pranešantys objektai.
+    - Konkretus pavyzdys:
+        - apdorojame failus, programa tikisi, jog failas: mano_failas1.txt bus direktorijoje C:/vartotojas/. Bet ten jo nėra, nes jis ištrintas.
+        - tikiu atveju biblioteka ar metodas gali išmesti exception objektą, kuris reikš jog to failo neradome.
+    - Kalbant abstrakčiau: exceptionai yra objektai, kurie išmetami įvykus klaidai tiek standartinių bibliotekų, tiek mūsų pačių (kaip programuotojų) indikuojant, kad programai kažkas nepavyko.
+    - Kokios dalys supratimui exceptionų yra reikalingos?
+        - Turime mokėti suhandlinti exceptionus - naudojame try/catch;
+        - Turime mokėti juos deklaruoti (custom exceptions) - sukuriame naują klasę, kuri turi extendinti arba Throwable klasę arba Exception klasę.
+        - Turime mokėti juos išmesti reikalingu metu (throw (custom) exception) - metame tada, kai aptinkame, jog kažkas negerai nutiko.
+    - Exceptionai yra handlinami su try-catch blokais tam, kad programos veikimas nenutrūktų. T.y. kas atsistatytume po klaidos.
+    - Finally blokas - įvyksta visais atvejais. T.y nepriklausomai ar exceptionas buvo sugautas ar nebuvo. Pvz: uždaryti InputStream() turime visada, nesvarbu ar failo duomenų nuskaitymas išmetė klaidą ar neišmetė klaidos.
+    - Bendra idioma vadinasi try-catch-finally.
+
+8. Generic types
+    -
+
+9. Collections (and Maps)
+10. Annotations
+11. Input/ Output
+12. Concurrency
+13. Lambda expressions
+14. Optionals
+15. Streams
+16. Nested Classes
