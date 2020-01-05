@@ -99,10 +99,37 @@
     - Finally blokas - įvyksta visais atvejais. T.y nepriklausomai ar exceptionas buvo sugautas ar nebuvo. Pvz: uždaryti InputStream() turime visada, nesvarbu ar failo duomenų nuskaitymas išmetė klaidą ar neišmetė klaidos.
     - Bendra idioma vadinasi try-catch-finally.
 
-8. Generic types
+8. Generic types (... and generic methods)
+    - Generic types suteikia galimybę parašyti kodą vieną kartą ir pritaikyti tą kodą, kad jis veiktų su įvairiais duomenų tipais.
+    - Tai reiškia, jog į klasę, kuri gali talpinti daug kitos klasės kintamųjų mes galime dėti kintamuosius iš įvairių klasių, neperrašinėdami kodo konteinerinės klasės
+    - Pvz: class GenericContainer<T> {}, galės savyje laikyti ir Integer ir Person ir String objektus (GenericContainer<Person> gc = new GenericContainer<>();
+    - Taip pat egzistuoja lower bounded (<? super Integer>) ir upper bounded (<T extends Car>) generic'sai, pvz: GenericContainer<T extends Car> - tai į tą klasę galėsime dėti tiktai Car klasės ar vaikinių
+        ... klasių objektus (tuos objektus, kurie yra Car arba "žemesnių" / "paveldinčių" klasių).
     -
 
 9. Collections (and Maps)
+    - reprezentuoja grupę / aibę objektų. Tuoj jie panašūs į masyvus. O kuo skiriasi nuo masyvų?
+        - Masyvai naudoja adresaciją pagrįsta indeksu (t.y. arr[i]), o kolekcijos naudoja metodus list.get(i);
+        - Kolekcijos gali plėstis neribotai, o masyvai negali plėstis daugiau nei jų deklaruotas dydis.
+        - Taip pat kolekcijos kaip ir kiekviena Java klasė, encapsuliuoja tam tikrą logiką, ne tik duomenis. Į mastyvą galime tik įdėti duomenis ir pasiimti juos.
+            ... su kolekcijomis galime klausti tokių dalykų kaip list.contains(), list.sort() ir t.t.
+    - Kokie svarbiausi kolekcijų tipai:
+        - Interfaceai:
+            - List (turi tvarką),
+            - Set (unikalūs (nėra dublikatų), bet tvarka nėra garantuota),
+            - Map (poros, key-value pairs - savyje laiko reikšmių poras, kaip telefono knyga).
+        - Implementacijos
+            - Listo implementacija dažniausiai naudojama yra ArrayList, LinkedList;
+            - Set implementacija dažniausiai naudojama yra HashSet;
+            - Map implementacija dažniausiai naudojama yra HashMap;
+    - Kokios svarbiausios operacijos su kolekcijomis:
+        - Išrykiuoti didėjimo, mažėjimo ar atsitiktine tvarka.
+        - Paieška (dvi rūšys paieškos: Linijinė (Linear Search) arba Binary Search.
+        - Map(), Filter(), Reduce();  reduce example: 12, 52, 56 ==> 41
+    - Advanced dalykai:
+        - List<List<String>> - sąrašas, kuris viduje turi daug kitų sąrašų, kurie viduje turi String tipo kintamąjį
+        - Map<String, List<Student>> - vardų ir juos turinčių studentų mapas. "Mindaugas --> [{grade: 8,5}, {grade: 2,5}, {grade: 9,5}]"
+
 10. Annotations
 11. Input/ Output
 12. Concurrency
@@ -110,3 +137,10 @@
 14. Optionals
 15. Streams
 16. Nested Classes
+
+
+Ką svarbiausia žinoti iš Java Advanced kurso dalies:
+- (1-4) OOP (Encap, Constructor, when to use objects, how to initialize them, etc.);
+- (9) Collections
+- (11) I/O (Input/ Output) + Exceptions
+- (15) Streams API
