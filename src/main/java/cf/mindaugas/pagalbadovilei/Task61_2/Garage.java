@@ -16,5 +16,11 @@ public class Garage<T> {
         return item;
     }
 
+    @Override
+    public String toString() {
+        return "Garage{" +
+                "item=" + item +
+                '}';
+    }
 }
 
