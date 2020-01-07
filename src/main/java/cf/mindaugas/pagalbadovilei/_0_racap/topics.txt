@@ -63,27 +63,24 @@
     - Konkreti klasė --> Abstrakti klasė --> Interface'as.
     - Abstrakčioje klasėje, gali egzistuoti abstraktūs metodai t.y. metodai be kūno/body. Body bus aprašytas tose klasėse, kurios extendins tą abstrakčią klasę.
     - Pvz kode:
+        abstract class Person {
+            private String name;
 
-    abstract class Person {
-        private String name;
+            public String getName(){
+                return this.name;
+            }
 
-        public String getName(){
-            return this.name;
+            abstract String calculate();
         }
-
-        abstract String calculate();
-    }
 
 6. Interface
     - Deklaruoja kontraktą t.y. pasako, kokius metodus klasė, kuri implementuoja tą interface'ą turi turėti.
     - Kontraktas, kuris apibrėžia elgseną, nes savyje interfeicai turi metodų deklaracijas.
     - Pvz kode:
-
-    package java.lang;
-
-    public interface Comparable<T> {
-        int compareTo(T var1);
-    }
+        package java.lang;
+        public interface Comparable<T> {
+            int compareTo(T var1);
+        }
 
 7. Exceptions
     - Klaidą pranešantys objektai.
@@ -105,7 +102,6 @@
     - Pvz: class GenericContainer<T> {}, galės savyje laikyti ir Integer ir Person ir String objektus (GenericContainer<Person> gc = new GenericContainer<>();
     - Taip pat egzistuoja lower bounded (<? super Integer>) ir upper bounded (<T extends Car>) generic'sai, pvz: GenericContainer<T extends Car> - tai į tą klasę galėsime dėti tiktai Car klasės ar vaikinių
         ... klasių objektus (tuos objektus, kurie yra Car arba "žemesnių" / "paveldinčių" klasių).
-    -
 
 9. Collections (and Maps)
     - reprezentuoja grupę / aibę objektų. Tuoj jie panašūs į masyvus. O kuo skiriasi nuo masyvų?
@@ -128,7 +124,7 @@
         - Map(), Filter(), Reduce();  reduce example: 12, 52, 56 ==> 41
     - Advanced dalykai:
         - List<List<String>> - sąrašas, kuris viduje turi daug kitų sąrašų, kurie viduje turi String tipo kintamąjį
-        - Map<String, List<Student>> - vardų ir juos turinčių studentų mapas. "Mindaugas --> [{grade: 8,5}, {grade: 2,5}, {grade: 9,5}]"
+        - Map<String, List<Student>> - vardų ir juos turinčių studentų mapas. "Mindaugas -> [{grade: 8,5}, {grade: 2,5}, {grade: 9,5}]"
 
 10. Annotations
 11. Input/ Output
