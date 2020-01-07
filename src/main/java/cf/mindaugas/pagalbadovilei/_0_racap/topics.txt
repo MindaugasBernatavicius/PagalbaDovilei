@@ -126,13 +126,35 @@
         - List<List<String>> - sąrašas, kuris viduje turi daug kitų sąrašų, kurie viduje turi String tipo kintamąjį
         - Map<String, List<Student>> - vardų ir juos turinčių studentų mapas. "Mindaugas -> [{grade: 8,5}, {grade: 2,5}, {grade: 9,5}]"
 
-10. Annotations
+10. Annotations:
+    - Tai metainformacija kompiliatoriui arba runtime'ui.
+    - Dažniausiai naudojamos yra @Override, @SuppressWarnings, @Deprecated, @FunctionalInterface
+    - Mes taip pat galime sukurti savo anotacijas ir jomis žymėti metodus bei klases, bet tam, kad sukūrę galėtume jas panaudoti,
+    ... mums reikia išmanyti Java Reflection
+
 11. Input/ Output
-12. Concurrency
-13. Lambda expressions
-14. Optionals
-15. Streams
-16. Nested Classes
+    - Computer is: CPU + MEM.
+    - Disk, keyboard, mouse, screen/display is I/O.
+    - Because disk is I/O that means reading files is also I/O.
+    - Perėjimas iš operacijų vykdymo vien atmintyje (tarkime kai dirbame su duomenimis įhardcodintais programoje) į I/O operacijas (atidarinėjame failus,
+        ... web puslapius ar darome tinklo užklausas, ar gauname informaciją iš vartotojo su Scanner) yra dažnas Excepion'ų šaltinis. Dėl ko I/O ir Exceptionai
+        ... yra glaudžiai susiję kaip temos.
+    - Java mums duoda daug patogių mechanizmų dirbti su Failais: File, Path
+    - Path t.y. kelias iki failo.
+    - Skirtingi dalykai yra:
+        -  try {} - tradicinis try/catch/finally
+        - ir try () {} -- try with resources, resursas, kurį automatiškai turėsime uždaryti yra inicializuojamas tarp skliaustų.
+
+12. Serialization
+    - Definition: java programos objektų (Person p1) konvertavimas į baitus/bitus ir užsaugojimas faile ir/ar siuntimas tinklu į kitą Java programą.
+    - Kada naudojamas: kai norime pasikeisti objektais tarp java virtualių mašinų distributed (t.y. aplikacija, kuri veikia neviename kompiuteryje) applikacijoje.
+    - Arba kai norime išsaugoti mūsų aplikacijos būseną (eng: state).
+
+13. Concurrency
+14. Lambda expressions
+16. Optionals
+16. Streams
+17. Nested Classes
 
 
 Ką svarbiausia žinoti iš Java Advanced kurso dalies:
