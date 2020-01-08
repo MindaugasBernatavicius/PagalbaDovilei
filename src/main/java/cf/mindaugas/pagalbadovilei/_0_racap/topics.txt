@@ -151,10 +151,22 @@
     - Arba kai norime išsaugoti mūsų aplikacijos būseną (eng: state).
 
 13. Concurrency
-14. Lambda expressions
+14. Nested Classes
+    - Javoje, galime turėti:
+        - vieną klasę per failą
+        - daug klasių tame pačiame faile (bet tik viena gali būti public)
+        - galime turi klasę kitoje klasėje (inner class, nested class).
+    // to create a new instane of mechanic (which is a static inner class)
+    // we need to call the class Bicycle e.g.: new Bicycle.Mechanic()
+    // ... we can not call an object like before: bicycle.new Wheel();
+    - Kam naudojamos? Prasmė turėti atskirą klasę nuo kitų klasių (t.y. atskirame faile) dažniausia atsiranda kai mes
+        ... norime galimybės ją panaudoti su įvairiomis klasėmis. Kai viena klasė yra taip susijusi su kita, jog vienos
+        ... negalime įsivaizduoti be kitos, tai galime naudoti vidines klases. Dažnas pavyzdys yra Iterator vidinė klasė,
+        ... Builder (iš Builder design patterno) bei grafinis programavimas su JavaFX / Android (is EventListener patternas).
+
+15. Lambda expressions
 16. Optionals
-16. Streams
-17. Nested Classes
+17. Streams
 
 
 Ką svarbiausia žinoti iš Java Advanced kurso dalies:
