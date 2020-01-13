@@ -151,6 +151,17 @@
     - Arba kai norime išsaugoti mūsų aplikacijos būseną (eng: state).
 
 13. Concurrency
+    - Apibrėžimas: daugiagijis / paralelinis programavimas.
+    - CPU threadus / gijas - stato į eilę ir ją rikiuoja pagal prioritetus. Jei turimes kelias gijas procese/programoje tai mūsų programa gali veikti greičiau.
+    - Kodėl gali veikti greičiau? Nes šiuolaikiniai CPU turi ne vieną šerdį (core) bet daug. Kadangi, kiekvienas core'as gali vykdyti dalį programos atskirai
+        ... tai programa pagreitėja.
+    - Kur naudingas ir kur naudojamas paralelinis programavimas.
+        - 1. Įsivaiduokime situaciją: turime 152 excel failus, su vartotojų duomenimis. Mums reikia juos perskaityti į programą ir suskaičiuoti sumas,
+            ... kiek žmonėmis buvo sumokėta atlyginimais. Jei turėtume tik vieną treadą, tai visos operacijos vyktų viena po kitos. O kai turime
+            ... multithreaded programą, tai dauguma/kelios operacijos gali vykti paralelei. Tai reikškia, vienu metu galime apdoroti daug failų, o ne vieną.
+        - 2. Dar naudojami GUI programavime, kad pagrindinis už grafinę aplinką atsakingas threadas, nebūtų užblokuotas.
+        - Reziumė: multithreaded programavimas naudojamas pagreitinti, arba neužblokuoti programos veikimo.
+
 14. Nested Classes
     - Javoje, galime turėti:
         - vieną klasę per failą

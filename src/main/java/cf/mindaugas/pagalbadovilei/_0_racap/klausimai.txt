@@ -1,0 +1,19 @@
+1. return (this.age > person.age) ? 1 : 0;
+- ka reiskia uzrasas "? 1 : 0". Tai vadinamasis ternary operatorius. Jis pakeičia if sąlygą ir yra ekvivalentus logiškai iš sąlygai.
+- if(sąlyga) { ką daryti jei tiesa } else { ką daryti jei netiesa }
+- (sąlyga) ? (ką daryti jei tiesa) : (ką daryti jei netiesa)
+
+2. Collections.sort(vardai);
+- siuo atveju vardus sortina abeceles tvarka nuo a iki z, o kaip butu atvirksciai, ar atsitiktine tvarka?
+- Collections.sort(vardai, Collections.reverseOrder());
+
+3. Kada istrinamas package'as ar class'e programoje, imanoma atkurti informacija, ar ne?
+- jei ištriname direktoriją ir neišjungiame programos, tai taip įmanoma. Jei išjungiame programą, tai tampa nebeįmanoma.
+
+4. Task: Create a map and display its result (data should be provided by the user - console): names and surname
+- Spendimas _2020_01_13/TaskWithMaps pakete
+
+5. Task: (naudojant Set ir kad spalvu reiksmes nesikartotu)
+1. Create a set consisting of colors given from the user.
+2. Present the removal of individual elements from the set.
+3. Display the collection before and after sorting.
