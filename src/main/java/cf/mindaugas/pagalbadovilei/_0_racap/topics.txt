@@ -149,6 +149,15 @@
     - Definition: java programos objektų (Person p1) konvertavimas į baitus/bitus ir užsaugojimas faile ir/ar siuntimas tinklu į kitą Java programą.
     - Kada naudojamas: kai norime pasikeisti objektais tarp java virtualių mašinų distributed (t.y. aplikacija, kuri veikia neviename kompiuteryje) applikacijoje.
     - Arba kai norime išsaugoti mūsų aplikacijos būseną (eng: state).
+    - File IO summary:
+        - Turime kelis būdus su Java skaityti ir rašyti informaciją į failus:
+            - Serializacija: java objketus išsaugoti faile, kad jie galėtų būti atkurti. Java įrašo, java nuskaito. Formatas yra neuniversalus, ir jis naudojamas tik java pasaulyje.
+                ... failas žmogui NEsuprantamas. Naudojame ObjectInputStream / ObjectOutputStream klasę tam.
+            - Saugojimas informacijos textiniais failais: žmogui įskaitomas failas. Ir kur kas universalesnis būdas rašyti ir skaityti informaciją.
+                ... Kitos platformos / kalbos ir galėtų atidaryti šios failus ir apdoroti. Naudojame BufferedWriter / BufferedReader klasę tam.
+            - Binary informacija (nesimokėme). - naudojami panašūs mechanizmai kaip ir su textiniais failais, bet interpretuoti binray data turime
+                ... pagal to file formato specifikaciją (dokumentą aprašantį kaip tas failas veikia), pvz: docx. Arba / ir naudojame bibliotekas tam.
+                ... pvz Apache POI: http://poi.apache.org/
 
 13. Concurrency
     - Apibrėžimas: daugiagijis / paralelinis programavimas.
@@ -161,6 +170,17 @@
             ... multithreaded programą, tai dauguma/kelios operacijos gali vykti paralelei. Tai reikškia, vienu metu galime apdoroti daug failų, o ne vieną.
         - 2. Dar naudojami GUI programavime, kad pagrindinis už grafinę aplinką atsakingas threadas, nebūtų užblokuotas.
         - Reziumė: multithreaded programavimas naudojamas pagreitinti, arba neužblokuoti programos veikimo.
+    - Sinchronizacija tarp threadų (thread locking):
+        - T.y. būdas užkirsti kelią keliems threadams / gijoms modifikuoti duomenis tuo pačiu metu.
+        - Užkertame kelią race condition'ams. Lekntyniavimui tarp threadų.
+        - Tam naudojame synchronized blokus. Pvz: public synchronized void takeASeat() {} - žymime visą metodą kaip sinchronizuotą.
+            ... tai reiškia, jog vienu metu tik vienas threadas galės tą metodą executinti.
+        - Kai metodas yra pažymėtas synchronized keywordu, tai reiškia jog tik vienas threads vienu metu veiks, o kiti threadai laukia savo eilės.
+    - Gera užduotis suprasti sinchronizacijai būtų:
+        - Iš 10 failų skaityti po skaičių (1-nam failui po 1-ną threadą).
+        - Ir sudėti sumą į vieną failą - suma bus saugoma 11-tame faile.
+    - Geriausia knyga šia tema:
+        ... https://www.amazon.co.uk/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601/ref=sr_1_1
 
 14. Nested Classes
     - Javoje, galime turėti:
@@ -176,6 +196,8 @@
         ... Builder (iš Builder design patterno) bei grafinis programavimas su JavaFX / Android (is EventListener patternas).
 
 15. Lambda expressions
+    -
+
 16. Optionals
 17. Streams
 
