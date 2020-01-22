@@ -40,7 +40,10 @@ public class _00_Predicate {
         System.out.println(startsWithABCTest.test("XYZABG"));
 
         // 5. Predicate chain
-        System.out.println(startsWithABCTest.and(s -> s.length() > 10).or(s -> s.equals("Mindaugas")).test("ABCABGYYY"));
+        System.out.println(startsWithABCTest
+                .and(s -> s.length() > 10)
+                .or(s -> s.equals("Mindaugas"))
+                .test("ABCABGYYY"));
     }
 }
 

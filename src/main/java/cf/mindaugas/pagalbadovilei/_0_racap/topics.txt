@@ -196,10 +196,23 @@
         ... Builder (iš Builder design patterno) bei grafinis programavimas su JavaFX / Android (is EventListener patternas).
 
 15. Lambda expressions
-    -
+    - Lambda išraiškos tai tiesiog patogesnė sintaksė (kitos, trumpesnis būdas) užrašyti anyniniminės klasės implementacijai.
+    - Tai reiškia pagerinamas yra programavimo stilius.
+    - A lambda expression can be an implementation of an interface which consists of only one method: Geras pavyzdys yra Runnable interface'as.
 
 16. Optionals
+    - Apgaubiantis tipas (wrapper) į kurį dedame reikšmes, kai nežinome ar tos reikšmės bus initializuotos (t.y. ne-null).
+    - Dažniausiai reikalingos naudojant stream API, pvz su .filter().
+
 17. Streams
+    - Reprezentuoja vieną kartą vykstančią operacijų grandinę / seką / konvejerį / srautą kurios taikomos kolekcijai (List).
+    - Aš (Mindaugas) asmeniškai suprantu jas kaip srautą, kelių operacijų einančių viena po kitos.
+    - Svarbiausios žinotinos operacijos yra: map(), filter(), foreach(), reduce();
+    - map() - pritaiko funkciją / transformaciją kiekvienam kolekcijos nariui kuris preina per stream'ą.
+        ... map, gražina tiek pat narių į kolekciją kiek priima, tačiau galimai pakeičia jų tipą (Sring --> Integer);
+    - filter() - išfiltruoja pagal loginę sąlygą. Loginė sąlyga yra taikoma kiekvienam nariui atskirai, o operacijos rezultas yra galimai
+        ... mažesnis narių kiekis kolekcijoje. Tipas nekeičiamas.
+    - reduce ir kitos operacijos SEKANČIAM KARTUI
 
 
 Ką svarbiausia žinoti iš Java Advanced kurso dalies:
