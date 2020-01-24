@@ -206,13 +206,16 @@
 
 17. Streams
     - Reprezentuoja vieną kartą vykstančią operacijų grandinę / seką / konvejerį / srautą kurios taikomos kolekcijai (List).
+    - Streamai reprezentuoja šią operacijų grandinę deklaratyviai. Deklaratyvus stilius dažniausiai yra glaustesnis, dėl to
+        ... stream'ų pagalba parašytas kodas dažnai yra ženkliai trumpesnis.
     - Aš (Mindaugas) asmeniškai suprantu jas kaip srautą, kelių operacijų einančių viena po kitos.
     - Svarbiausios žinotinos operacijos yra: map(), filter(), foreach(), reduce();
     - map() - pritaiko funkciją / transformaciją kiekvienam kolekcijos nariui kuris preina per stream'ą.
         ... map, gražina tiek pat narių į kolekciją kiek priima, tačiau galimai pakeičia jų tipą (Sring --> Integer);
     - filter() - išfiltruoja pagal loginę sąlygą. Loginė sąlyga yra taikoma kiekvienam nariui atskirai, o operacijos rezultas yra galimai
         ... mažesnis narių kiekis kolekcijoje. Tipas nekeičiamas.
-    - reduce ir kitos operacijos SEKANČIAM KARTUI
+    - reduce() - skaičių aibę sutraukia į vieną skaičių, pagal kažkokias taisykles. Pvz: sumos funkcija yra redukuojanti, sandaugos, average.
+    - ForEach() - kiekvienam nariui kolekcijoje iš kurios padarytas streamas, darome tam tikrą operaciją.
 
 
 Ką svarbiausia žinoti iš Java Advanced kurso dalies:
