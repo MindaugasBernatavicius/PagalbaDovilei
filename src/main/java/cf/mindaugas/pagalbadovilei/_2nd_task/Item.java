@@ -1,31 +1,54 @@
 package cf.mindaugas.pagalbadovilei._2nd_task;
 
-// Item item = new Item("XX", 2.55);
-// item.name = ""; -- can't do that
-// item.setName("");
 public class Item {
     private String name;
-    private double weight;
+    private double price;
 
-    public Item(String name, double weight) {
+    public Item(String name, double price) {
         this.name = name;
-        this.weight = weight;
+        this.price = price;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) throws Exception {
-        if(name.equals("") || name != null) throw new Exception("Name can't be empty");
+    public void setName(String name) {
         this.name = name;
     }
 
-    public double getWeight() {
-        return weight;
+    public double getPrice() {
+        return price;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        if (Double.compare(item.price, price) != 0) return false;
+        return name.equalsIgnoreCase(item.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name.hashCode();
+        temp = Double.doubleToLongBits(price);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
