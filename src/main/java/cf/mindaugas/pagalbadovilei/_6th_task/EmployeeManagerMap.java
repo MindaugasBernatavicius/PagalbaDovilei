@@ -8,22 +8,22 @@ import java.util.Map;
 public class EmployeeManagerMap {
     public static void main(String[] args) {
         // a.  The key and value are of the String type
-        Map<String, String> empMan1 = new HashMap<>(){{
+        Map<String, String> empMan1 = new HashMap(){{
             put("Mindaugas", "Jonas");
             put("Petras", "Antanas");
         }};
 
         // b.  The key and value are classes of type "Employee" and "Manager"
-        Map<Employee, Manager> empMan2 = new HashMap<>(){{
+        Map<Employee, Manager> empMan2 = new HashMap(){{
             put(new Employee("Mindaugas"), new Manager("Jonas"));
             put(new Employee("Petras"), new Manager("Antanas"));
         }};
 
         // c.  * The key is of type "Manager", the value is a list storing the type "Employee"
-        Map<Manager, List<Employee>> manEmpls = new HashMap<>(){{
-            put(new Manager("Mindaugas"), new ArrayList<>() {{
+        Map<Manager, List<Employee>> manEmpls = new HashMap(){{
+            put(new Manager("Mindaugas"), new ArrayList() {{
                         add(new Employee("Simonas")); add(new Employee("Saimonas")); }});
-            put(new Manager("Alfonsas"), new ArrayList<>() {{
+            put(new Manager("Alfonsas"), new ArrayList() {{
                         add(new Employee("Zita")); add(new Employee("Gita")); }});
         }};
 

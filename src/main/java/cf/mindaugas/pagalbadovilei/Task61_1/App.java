@@ -41,7 +41,7 @@ public class App {
         Person jonas = new Person("Petras", 30);
         Person petras = new Person("Jonas", 30);
 
-        List<Person> people = new ArrayList<>() {{
+        List<Person> people = new ArrayList() {{
             add(jonas); add(petras);
         }};
         System.out.println("Before sorting: " + people);

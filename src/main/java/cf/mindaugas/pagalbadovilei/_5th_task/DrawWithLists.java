@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class DrawWithLists {
 
-    private static List<Character> listOfChars = new ArrayList<>(){{
+    private static List<Character> listOfChars = new ArrayList(){{
         add('*'); add('*'); add('*'); add('*'); add('*'); add('*'); add('*');
     }};
 
