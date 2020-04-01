@@ -9,7 +9,7 @@ public class Api {
     public static void main(String[] args) {
         // 0. Generating simple HTML
         get("/hw", (request, response) -> {
-            return "<h1>Hello world!</h1>";
+            return "<h1 style=\"color:red\">Hello world!</h1>";
         });
 
         post("/submit-form", (request, response) -> {
@@ -24,5 +24,6 @@ public class Api {
             }
             return ulopen + ulclose;
         });
+
     }
 }
